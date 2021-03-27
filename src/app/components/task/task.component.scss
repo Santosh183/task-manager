@@ -1,0 +1,67 @@
+.card {
+    display: flex;
+    box-shadow: 0px 0px 3px #26c6da;
+    width: 95%;
+    margin: 10px auto;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #868585;
+    .left-info {
+        width: 65%;
+        .top-info {
+            margin-bottom: 10px;
+            .label {
+                color: #26c6da;
+                margin-right: 5px;
+                display: inline-block;
+                width: 30%;
+            }
+        }
+        .task-description {
+            .label {
+                color: #26c6da;
+                display: block;
+            }
+        }
+    }
+    .right-info {
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .option-container{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            opacity: 0;
+            img {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                margin-right: 7px;
+            }
+        }
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img {
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                margin-bottom: 5px;
+
+            }
+        }
+    }
+    &:hover {
+        .right-info {
+            .option-container{
+               opacity: 1;
+            }
+        }
+    }
+}

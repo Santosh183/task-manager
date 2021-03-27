@@ -2,6 +2,9 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+* {
+    box-sizing: border-box;
+}
 
 ::-webkit-scrollbar {
     width: 5px;
@@ -15,5 +18,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #76909c; 
+  }
+  *{
+      text-overflow: ellipsis;
+  }
+  ::-webkit-input-placeholder { /* Edge */
+    color: #119e9e;
+    opacity: 0.6;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #119e9e;
+    opacity: 0.6;
+  }
+  
+  ::placeholder {
+    color: #119e9e;
+    opacity: 0.6;
   }
   
