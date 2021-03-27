@@ -1,0 +1,98 @@
+header {
+    background: linear-gradient(45deg, #085656, #4fc3f7);
+    color: #FFF;
+    padding: 20px 25px 25px 25px;
+    h1 {
+        font-family: "Roboto, Arial";
+        font-size: 40px;
+        text-align: center;
+        font-weight: bold;
+        margin: 0;
+        margin-bottom: 45px;
+    }
+    .buttons-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .left-buttons {
+            display: flex;
+            .input-parent {
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-end;
+                position: relative;
+                flex-direction: column;
+                svg {
+                    height: 24px;
+                    width: 24px;
+                    position: absolute;
+                    left: 7px;
+                    bottom: 5px;
+                }
+                input {
+                    width: 150px;
+                    padding: 5px 20px 5px 40px;
+                    height: 25px;
+                    border-radius: 2px;    
+                    outline: none;
+                    border: none;   
+                    margin-right: 10px;             
+                }
+                select {
+                    width: 150px;
+                    padding: 5px 20px;
+                    height: 35px;
+                    border-radius: 2px;    
+                    outline: none;
+                    border: none;   
+                    margin-right: 10px;             
+                }
+                label {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+        .right-buttons {
+            .button-parent {
+                height: 60px;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                button {
+                    width: 150px;
+                    padding: 5px 20px;
+                    height: 35px;
+                    border-radius: 2px;    
+                    outline: none;
+                    border: none;   
+                    margin-right: 10px;
+                    background: #D8873C;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+.main-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 25px 0px;
+    .tasks {
+        width: 30%;
+        overflow: hidden;
+        height: 525px;
+        h3 {
+            margin:0;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #119e9e;
+        }
+        .task-group {
+            background: #EFF3F3;
+            height: 500px;
+            overflow: auto;
+        }
+    }
+}
