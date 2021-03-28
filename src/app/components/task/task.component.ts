@@ -12,5 +12,8 @@ export class TaskComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  getProfilePic() {
+    
+  }
 
 }

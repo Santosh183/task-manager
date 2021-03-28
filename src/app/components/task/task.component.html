@@ -3,23 +3,20 @@
         <div class="top-info">
             <div class="info-container">
                 <span class="label">Task Id : </span>
-                <span class="data">2014</span>
+                <span title="{{task.id}}" class="data">{{task.id}}</span>
             </div>
             <div class="info-container">
                 <span class="label">Create Date : </span>
-                <span class="data">12/04/2021</span>
+                <span title="{{task.created_on}}" class="data">{{task.created_on}}</span>
             </div>
             <div class="info-container">
                 <span class="label">Due Date : </span>
-                <span class="data">12/04/2021</span>
+                <span title="{{task.due_date}}" class="data">{{task.due_date}}</span>
             </div>
         </div>
         <div class="task-description">
             <span class="label">Task Details: </span>
-            Here we have description of the task. 
-            Here i am going to describe task in details in 
-            case my description is  too long we have to ignore 
-            full descrition.
+            <span>{{task.message}}</span>
         </div>
     </div>
     <div class="right-info">
@@ -28,9 +25,9 @@
             <img src="../../../assets/images/delete.svg" alt="delete">
         </div>
         <div class="profile-container">
-            <img src="https://images.generated.photos/e9j7MmGzErA8i3bvDhGiZjsdm3RBYAM3vN2NLeNAL8E/rs:fit:512:512/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zL3Yz/XzA1NTg4MjYuanBn.jpg" alt="profile-pic">
-            <span>2021</span>
-            <span>Arpit Tripathi</span>
+            <img src="{{getProfilePic()}}" alt="profile-pic">
+            <span>{{task.assigned_to}}</span>
+            <span title="{{task.assigned_name}}">{{task.assigned_name}}</span>
         </div>
 
     </div>

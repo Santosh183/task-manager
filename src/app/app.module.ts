@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { TaskComponent } from './components/task/task.component';
 
 @NgModule({
@@ -16,7 +17,9 @@ import { TaskComponent } from './components/task/task.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

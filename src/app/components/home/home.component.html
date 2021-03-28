@@ -34,29 +34,32 @@
     <div class="tasks">
         <h3>Low Priority Tasks</h3>
         <div class="task-group">
-            <div class="task">
-
-            </div>
+            <ng-container *ngFor= "let task of tasks">
+                <div  class="task">
+                    <app-task *ngIf="task.priority == 3" [task]="task"></app-task>
+                </div>
+            </ng-container> 
         </div>
-
     </div>
     <div class="tasks">
         <h3>Medium Priority Tasks</h3>
         <div class="task-group">
-            <div class="task">
-                <app-task></app-task>
-            </div>
-            
+            <ng-container *ngFor= "let task of tasks">
+                <div  class="task">
+                    <app-task *ngIf="task.priority == 2" [task]="task"></app-task>
+                </div>
+            </ng-container>            
         </div>
         
     </div>
     <div class="tasks">
         <h3>High Priority Tasks</h3>
         <div class="task-group">
-            <div class="task">
-                
-            </div>
-        </div>
-        
+            <ng-container *ngFor= "let task of tasks">
+                <div  class="task">
+                    <app-task *ngIf="task.priority == 1" [task]="task"></app-task>
+                </div>
+            </ng-container>
+        </div>        
     </div>
 </section>
