@@ -21,8 +21,8 @@
     </div>
     <div class="right-info">
         <div class="option-container">
-            <img src="../../../assets/images/pencil.svg" alt="edit">
-            <img src="../../../assets/images/delete.svg" alt="delete">
+            <img (click)="openEditModal()" src="../../../assets/images/pencil.svg" alt="edit">
+            <img (click)="openDeleteModal()" src="../../../assets/images/delete.svg" alt="delete">
         </div>
         <div class="profile-container">
             <img src="{{getProfilePic()}}" alt="profile-pic">

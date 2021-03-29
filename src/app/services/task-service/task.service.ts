@@ -13,13 +13,11 @@ export class TaskService {
   }
 
   getTaskList() {
-    const header = new HttpHeaders();
-    header.set('AuthToken', this.token);
+    const header = new HttpHeaders({ 'AuthToken': this.token });
     return this.http.get(this.baseUrl+"list",{headers:header});
   }
   getUsers() {
-    const header = new HttpHeaders();
-    header.set('AuthToken', this.token);
+    const header = new HttpHeaders({ 'AuthToken': this.token });
     return this.http.get(this.baseUrl+"listusers",{headers:header});
   }
 }

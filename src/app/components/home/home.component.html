@@ -25,18 +25,18 @@
         </div>
         <div class="right-buttons">
             <div class="button-parent">
-                <button>Create task +</button>
+                <button (click)="openTaskModal(false,null)">Create task +</button>
             </div>            
         </div>
     </div>
 </header>
-<section class="main-container">
-    <div class="tasks">
+<section *ngIf="!loader" class="main-container">
+    <div  class="tasks">
         <h3>Low Priority Tasks</h3>
         <div class="task-group">
-            <ng-container *ngFor= "let task of tasks">
+            <ng-container *ngFor= "let task of lowTasks">
                 <div  class="task">
-                    <app-task *ngIf="task.priority == 3" [task]="task"></app-task>
+                    <app-task (deleteModal)="openTaskModal(true,task)" (editModal)="openTaskModal(true,task)" [task]="task"></app-task>
                 </div>
             </ng-container> 
         </div>
@@ -44,22 +44,23 @@
     <div class="tasks">
         <h3>Medium Priority Tasks</h3>
         <div class="task-group">
-            <ng-container *ngFor= "let task of tasks">
+            <ng-container *ngFor= "let task of mediumTasks">
                 <div  class="task">
-                    <app-task *ngIf="task.priority == 2" [task]="task"></app-task>
+                    <app-task  (deleteModal)="openTaskModal(true,task)" (editModal)="openTaskModal(true,task)" [task]="task"></app-task>
                 </div>
             </ng-container>            
         </div>
         
     </div>
-    <div class="tasks">
+    <div  class="tasks">
         <h3>High Priority Tasks</h3>
         <div class="task-group">
-            <ng-container *ngFor= "let task of tasks">
+            <ng-container *ngFor= "let task of highTasks">
                 <div  class="task">
-                    <app-task *ngIf="task.priority == 1" [task]="task"></app-task>
+                    <app-task (deleteModal)="openTaskModal(true,task)" (editModal)="openTaskModal(true,task)" [task]="task"></app-task>
                 </div>
             </ng-container>
         </div>        
     </div>
 </section>
+<mat-spinner  *ngIf="loader"></mat-spinner>

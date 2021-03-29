@@ -1,0 +1,56 @@
+<h3 *ngIf="this.data.update">Task: {{taskId}}</h3>
+<div class="main-container">
+    <div class="form-element">
+        <mat-form-field appearance="fill">
+            <mat-label>Due Date</mat-label>
+            <input [(ngModel)]="dueDate" matInput [min]="minDate" [matDatepicker]="dp3" disabled>
+            <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+            <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div class="form-element">
+        <mat-form-field class="example-full-width">
+            <mat-label>Assign to</mat-label>
+            <input matInput
+                aria-label="Assign to"
+                [matAutocomplete]="auto"
+                [formControl]="userCtrl">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let user of filteredUsers | async" [value]="user.name">
+                    <div class="option-container">                
+                        <small class="id">{{user.id}}</small>
+                        <span class="name">{{user.name}}</span>
+                        <img  class="list-img" aria-hidden [src]="user.picture">
+                    </div>
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
+
+    <div class="form-element">
+        <mat-form-field appearance="fill">
+            <mat-label>Select an priority</mat-label>
+            <mat-select matInput [(value)]="priority">
+            <mat-option >None</mat-option>
+            <mat-option value="1">Low</mat-option>
+            <mat-option value="2">Medium</mat-option>
+            <mat-option value="3">High</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="form-element">
+        <mat-form-field class="example-full-width">
+            <mat-label>Task description</mat-label>
+            <textarea [(ngModel)]="taskDescription" height="50" width="100%" #message maxlength="256" matInput placeholder="descirbe about task.."></textarea>
+            <mat-hint align="end"> {{message.value.length}} / 256</mat-hint>
+        </mat-form-field>
+    </div>
+
+    <div class="form-element">
+        <mat-dialog-actions align="end">
+            <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Save</button>
+            <button mat-button mat-dialog-close>Cancel</button>
+        </mat-dialog-actions>
+    </div>
+</div>
